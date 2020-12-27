@@ -48,10 +48,10 @@ public class Battleship {
         var y = Integer.parseInt(coord.substring(1));
         if (field[x - 1][y - 1] == 'O') {
             field[x - 1][y - 1] = 'X';
-            return "You hit a ship!";
+            return fow() + System.lineSeparator() + "You hit a ship!";
         } else {
             field[x - 1][y - 1] = 'M';
-            return "You missed!";
+            return fow() + System.lineSeparator() + "You missed!";
         }
     }
 
@@ -85,5 +85,18 @@ public class Battleship {
         return sb.toString();
     }
 
-
+    public String fow() {
+        var sb = new StringBuilder("  1 2 3 4 5 6 7 8 9 10");
+        sb.append(System.lineSeparator());
+        char letter = 'A';
+        for (char[] row : field) {
+            sb.append(letter++);
+            for (char c : row) {
+                c = c == 'O' ? '~' : c;
+                sb.append(" ").append(c);
+            }
+            sb.append(System.lineSeparator());
+        }
+        return sb.toString();
+    }
 }

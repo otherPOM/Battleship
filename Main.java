@@ -10,8 +10,12 @@ public class Main {
         System.out.println(game);
         positioning(game);
         System.out.println("The game starts!");
+        System.out.println(game.fow());
+        shooting(game);
         System.out.println(game);
+    }
 
+    private static void shooting(Battleship game) {
         while (true) {
             System.out.println("Take a shot!");
             var coord = scan.nextLine();
@@ -20,7 +24,6 @@ public class Main {
                 continue;
             }
             System.out.println(game.shoot(coord));
-            System.out.println(game);
             break;
         }
     }
