@@ -43,6 +43,18 @@ public class Battleship {
         return "";
     }
 
+    public String shoot(String coord) {
+        var x = coord.charAt(0) - 'A' + 1;
+        var y = Integer.parseInt(coord.substring(1));
+        if (field[x - 1][y - 1] == 'O') {
+            field[x - 1][y - 1] = 'X';
+            return "You hit a ship!";
+        } else {
+            field[x - 1][y - 1] = 'M';
+            return "You missed!";
+        }
+    }
+
     private boolean isOccupied(int x1, int x2, int y1, int y2) {
         x1 = x1 - 1 < 1 ? x1 : x1 - 1;
         x2 = x2 > y1 ? (x2 + 1 > 10 ? x2 : x2 + 1) : x2 - 1 < 1 ? x2 : x2 - 1;

@@ -9,6 +9,20 @@ public class Main {
         var game = new Battleship();
         System.out.println(game);
         positioning(game);
+        System.out.println("The game starts!");
+        System.out.println(game);
+
+        while (true) {
+            System.out.println("Take a shot!");
+            var coord = scan.nextLine();
+            if (!coord.matches("[A-J]([1-9]|10)")) {
+                System.out.println("Error! You entered the wrong coordinates! Try again:");
+                continue;
+            }
+            System.out.println(game.shoot(coord));
+            System.out.println(game);
+            break;
+        }
     }
 
     private static void positioning(Battleship game) {
@@ -19,7 +33,8 @@ public class Main {
                         type.getName(), type.getLength(), System.lineSeparator());
                 var coordinates = scan.nextLine();
                 if (!coordinates.matches("[A-J]([1-9]|10) [A-J]([1-9]|10)")) {
-                    throw new IllegalArgumentException();
+                    System.out.println("Error! You entered the wrong coordinates! Try again:");
+                    continue;
                 }
                 res = game.place(type, coordinates);
                 System.out.println(res);
