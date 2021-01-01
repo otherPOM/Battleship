@@ -16,3 +16,6 @@ If the player managed to hit a ship, the game should display a message `You hit 
 
 ## Stage 3
 In this stage, you need to implement the "fog of war" feature in your game. First, place all the ships on the game field, and then hide them with the symbol `~`. Take a shot like in the previous step, and after your attempt the program should print a message along with two versions of the field: one covered with the fog of war and another one open.
+
+## Stage 4
+To complete this step, you should add a check that all the ships were successfully sunk. The game is supposed to go on until all ships go down. The program should print an extra message `You sank a ship!` when all the cells of a particular ship have been hit. Take a look at the examples below!
