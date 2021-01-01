@@ -19,3 +19,6 @@ In this stage, you need to implement the "fog of war" feature in your game. Firs
 
 ## Stage 4
 To complete this step, you should add a check that all the ships were successfully sunk. The game is supposed to go on until all ships go down. The program should print an extra message `You sank a ship!` when all the cells of a particular ship have been hit. Take a look at the examples below!
+
+## Stage 5
+To complete this stage and the entire project, add a PvP component to your game. Now the player will see not only the opponent's screen but their own as well. Place the opponent's screen at the top and your field at the bottom.

@@ -58,15 +58,15 @@ public class Field {
                 if (isSunk(ship)) {
                     ships.remove(ship);
                     if (ships.isEmpty()) {
-                        return fow() + System.lineSeparator() + "You sank the last ship. You won. Congratulations!";
+                        return "You sank the last ship. You won. Congratulations!";
                     }
-                    return fow() + System.lineSeparator() + "You sank a ship! Specify a new target:";
+                    return "You sank a ship!";
                 }
             }
-            return fow() + System.lineSeparator() + "You hit a ship! Try again:";
+            return "You hit a ship!";
         } else {
             field[x - 1][y - 1] = 'M';
-            return fow() + System.lineSeparator() + "You missed! Try again:";
+            return "You missed!";
         }
     }
 
